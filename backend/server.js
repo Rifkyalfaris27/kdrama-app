@@ -22,6 +22,10 @@ const mainUrl = "https://tv1.nontondrama.my/";
 
 app.use("/", proxyRouter);
 
+app.get("/test", async (req, res) => {
+  res.json({ message: "Test endpoint working!" });
+});
+
 app.get("/home", async (req, res) => {
   try {
     try {
@@ -65,7 +69,6 @@ app.get("/home", async (req, res) => {
         totalPages: totalPages,
         currentPage: page,
       });
-
     } catch (err) {
       console.error("Error:", err.message);
     }
